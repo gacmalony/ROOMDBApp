@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="contact"
+            type="com.example.roomdbapp.Contact" />
+        <variable
+            name="click"
+            type="com.example.roomdbapp.AddNewContactClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddNewContactActivity"
+        android:background="@drawable/whos">
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="248dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@={contact.name}"
+            android:hint="You Gonna Do It"
+            android:textColorHint="@color/cardview_light_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@={contact.email}"
+            android:hint="Yes You did, You did..."
+            android:textColorHint="@color/cardview_light_background"
+            app:layout_constraintStart_toStartOf="@+id/editTextText"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+
+        <Button
+            android:onClick="@{click::Clicked}"
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Add Contact"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
